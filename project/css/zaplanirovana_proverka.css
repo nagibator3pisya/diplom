@@ -1,0 +1,277 @@
+.form-select {
+  width: 200px;
+  height: 38px;
+  border-radius: 5px;
+  border-color: rgb(179, 179, 179);
+}
+.form-select .selected {
+  color: rgb(200, 200, 200);
+}
+
+/* форма карточки и стили */
+.card-text {
+  color: #868686;
+}
+
+.list-group {
+  padding-left: 0; /* Убираем левый паддинг у всего списка */
+}
+
+.list-group-item {
+  padding-left: 0; /* Убираем левый паддинг у элементов списка */
+  border: none !important; /*черда под списком*/
+}
+
+body {
+  background-color: #efefef;
+  font-family: "Poppins", sans-serif;
+}
+
+#desktopSidebar {
+  /* Ваши стили для боковой панели */
+  background-color: rgba(232, 232, 232, 1);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo a {
+  color: #181717;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem; /* Паддинг для лого */
+  display: block; /* Для корректного паддинга */
+}
+
+.sidebar-nav {
+  padding-left: 0;
+}
+
+.sidebar-nav .nav-link {
+  color: #919191;
+  padding: 0.5rem 1rem; /* Паддинг для ссылок внутри боковой панели */
+  margin: 8px;
+}
+.sidebar-nav .nav-link span {
+  margin-left: 8px; /* Или любое другое значение отступа, которое вам нужно */
+}
+
+.btns {
+  padding: 0.5rem 1rem; /* Паддинг для ссылок внутри боковой панели */
+  margin: 8px;
+}
+
+.my-custom-font {
+  font-family: "Arial", sans-serif; /* Замените на шрифт, используемый в проекте */
+  font-size: 100%; /* 150% от базового размера шрифта */
+  letter-spacing: 0.15px; /* Межбуквенный интервал */
+  line-height: normal; /* Обычно используемое значение, если в Фигме указано 0, скорее всего, это ошибка */
+  color: #868686; /* Цвет текста, замените на нужный */
+  text-transform: uppercase; /* Текст в верхнем регистре */
+  font-weight: bold; /* Жирный текст */
+  width: 18rem;
+}
+
+.btn {
+  border: none;
+}
+.sidebar-nav .nav-link:hover {
+  color: black;
+  background-color: rgba(215, 215, 215, 1);
+  border-radius: 10%;
+}
+
+/* Модальное окно */
+/* Цвет текста для неактивных кнопок при наведении */
+.btn-outline-primary:not(:checked):hover {
+  color: #5a6268; /* Желаемый цвет текста для неактивных кнопок при наведении */
+}
+
+/* Цвет текста для активной кнопки */
+.btn-check:checked + .btn-outline-primary {
+  color: #fff; /* Цвет текста для активной кнопки */
+  background-color: rgba(
+    20,
+    184,
+    144,
+    1
+  ); /* Пример цвета фона для активной кнопки */
+  border-color: rgba(
+    20,
+    184,
+    144,
+    1
+  ); /* Пример цвета границы для активной кнопки */
+}
+.btn-burger {
+  background-color: rgb(114, 187, 170);
+  border-color: rgb(114, 187, 170);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  border:none;
+  padding: 6px 12px;
+}
+.btn-burger:active {
+  background-color: rgb(14, 113, 90) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btn-burger:hover {
+  background-color: rgb(14, 113, 90);
+  border-color: rgb(14, 113, 90);
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Цвет фона и границы для кнопки при фокусе или активном состоянии */
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.btn-check:checked + .btn-outline-primary:focus,
+.btn-check:checked + .btn-outline-primary:active {
+  background-color: #138496; /* Цвет фона при фокусе или активном состоянии */
+  border-color: #117a8b; /* Цвет границы при фокусе или активном состоянии */
+}
+
+/* Возвращение стиля неактивной кнопки при потере фокуса */
+.btn-check:not(:checked) + .btn-outline-primary {
+  color: #6c757d; /* Цвет текста для неактивной кнопки */
+  background-color: transparent; /* Прозрачный фон для неактивной кнопки */
+  border-color: #6c757d; /* Цвет границы для неактивной кнопки */
+}
+
+.btn-delet {
+  background-color: rgba(215, 40, 40, 0.392);
+  /* border-color:  rgb(185, 184, 184); */
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 2px solid rgb(255, 0, 0);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+  /* padding: 10px */
+}
+.btn-delet:active {
+  background-color: rgb(173, 31, 31) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btn-delet:hover {
+  background-color: rgba(244, 67, 54, 1);
+  border-color: rgba(244, 67, 54, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.btn-otmena {
+  background-color: rgb(255, 250, 250);
+  /* border-color:  rgb(185, 184, 184); */
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 2px solid rgba(185, 184, 184, 0.255);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+  /* padding: 10px */
+}
+.btn-otmena:active {
+  background-color: rgb(14, 133, 36) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btn-otmena:hover {
+  background-color: rgba(20, 184, 144, 1);
+  border-color: rgba(20, 184, 144, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.btns {
+  background-color: rgb(255, 250, 250);
+  /* border-color:  rgb(185, 184, 184); */
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 2px solid rgba(185, 184, 184, 0.255);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+  /* padding: 10px */
+}
+.btns:active {
+  background-color: rgb(173, 31, 31) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btns:hover {
+  background-color: rgba(244, 67, 54, 1);
+  border-color: rgba(244, 67, 54, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.btnе {
+  background-color: rgba(20, 184, 144, 1);
+  border-color: rgba(20, 184, 144, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  border: 0;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+  height: 40px;
+}
+.btnе:active {
+  background-color: rgb(14, 113, 90) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btnе:hover {
+  background-color: rgb(14, 113, 90);
+  border-color: rgb(14, 113, 90);
+  color: rgba(255, 255, 255, 1);
+}
+
+.badge-green {
+  background-color: rgba(108, 253, 36, 0.201);
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: rgba(82, 196, 26, 1);
+  border: 1px solid;
+  border-color: rgba(82, 196, 26, 1);
+}
+.badge-red {
+  background-color: rgba(213, 17, 83, 0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(233, 30, 99, 1);
+  color: red;
+}
+.badge-blue {
+  background-color: rgba(33, 150, 243, 0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(9, 109, 217, 1);
+  color: rgba(9, 109, 217, 1);
+}
+.badge-gray {
+  background-color: rgba(154, 156, 156, 0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(154, 156, 156, 1);
+  color: rgba(154, 156, 156, 1);
+}
+.badge-orange {
+  background-color: rgba(255, 138, 0, 0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgba(255, 138, 0, 1);
+  color: rgba(255, 138, 0, 1);
+}
+.card {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  margin: 5px;
+}
+
+/* Этот CSS гарантирует, что десктопная версия видна только на больших экранах */
+#desktopSidebar {
+  display: block; /* всегда видимый на больших экранах */
+}
+
+@media (max-width: 1024px) {
+  .card-body{
+    padding: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-body{
+    padding: 5px;
+    margin: 5px;
+  }
+}

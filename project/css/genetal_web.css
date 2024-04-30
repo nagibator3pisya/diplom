@@ -1,0 +1,152 @@
+body {
+  background-color: #efefef;
+  font-family: "Poppins", sans-serif;
+}
+
+#desktopSidebar {
+  /* Ваши стили для боковой панели */
+  background-color: rgba(232, 232, 232, 1);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo a {
+  color: #181717;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem; /* Паддинг для лого */
+  display: block; /* Для корректного паддинга */
+}
+
+.sidebar-nav {
+  padding-left: 0;
+}
+
+.sidebar-nav .nav-link {
+  color: #919191;
+  padding: 0.5rem 1rem; /* Паддинг для ссылок внутри боковой панели */
+  margin: 8px;
+}
+.sidebar-nav .nav-link span {
+  margin-left: 8px; /* Или любое другое значение отступа, которое вам нужно */
+}
+
+.btns {
+  padding: 0.5rem 1rem; /* Паддинг для ссылок внутри боковой панели */
+  margin: 8px;
+}
+
+.my-custom-font {
+  font-family: "Arial", sans-serif; /* Замените на шрифт, используемый в проекте */
+  font-size: 100%; /* 150% от базового размера шрифта */
+  letter-spacing: 0.15px; /* Межбуквенный интервал */
+  line-height: normal; /* Обычно используемое значение, если в Фигме указано 0, скорее всего, это ошибка */
+  color: #868686; /* Цвет текста, замените на нужный */
+  text-transform: uppercase; /* Текст в верхнем регистре */
+  font-weight: bold; /* Жирный текст */
+  width: 18rem;
+}
+
+
+
+
+
+
+.btn {
+  background-color: rgb(114, 187, 170);
+  border-color: rgb(114, 187, 170);
+  color: rgba(255, 255, 255, 1);
+}
+.btn:active {
+  background-color: rgb(14, 113, 90) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btn:hover {
+  background-color: rgb(14, 113, 90);
+  border-color: rgb(14, 113, 90);
+  color: rgba(255, 255, 255, 1);
+}
+
+.btns {
+  background-color: rgb(220, 219, 219);
+  border-color: rgb(172, 172, 172);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 0;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+}
+.btns:active {
+  background-color: rgb(173, 31, 31) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btns:hover {
+  background-color: rgba(244, 67, 54, 1);
+  border-color: rgba(244, 67, 54, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.btn-sybmit {
+  background-color: rgba(20, 184, 144, 1);
+  border-color: rgba(20, 184, 144, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  border: 0;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
+  height: 40px;
+}
+.btn-sybmit:active {
+  background-color: rgb(14, 113, 90) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.btn-sybmit:hover {
+  background-color: rgb(14, 113, 90);
+  border-color: rgb(14, 113, 90);
+  color: rgba(255, 255, 255, 1);
+}
+.btn-sybmit:not(:disabled) {
+  cursor: pointer;
+}
+
+/* .sidebar-nav .nav-link.active,
+  .sidebar-nav .nav-link:focus,
+  .sidebar-nav .nav-link:hover {
+    background-color: #afb4ba;
+  } */
+
+.sidebar-nav .nav-link:hover {
+  color: black;
+  background-color: rgba(215, 215, 215, 1);
+  border-radius: 10%;
+}
+
+/* Этот CSS гарантирует, что десктопная версия видна только на больших экранах */
+#desktopSidebar {
+  display: block; /* всегда видимый на больших экранах */
+}
+
+@media (max-width: 1025px) {
+  #desktopSidebar {
+    display: none; /* скрыт на маленьких экранах */
+  }
+  #mobileSidebar {
+    display: block; /* видимый только на маленьких экранах */
+  }
+
+}
+@media (max-width: 993px) {
+  #desktopSidebar {
+    display: none; /* скрыт на маленьких экранах */
+  }
+  #mobileSidebar {
+    display: block; /* видимый только на маленьких экранах */
+  }
+}
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 320px) {
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/project/css/zaplanirovana_proverka.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Боковая панель -->
+      <nav class=" nav navbar-expand-lg col-xxl-2 col-md-2  d-none d-xl-block sticky-top p-0" id="desktopSidebar">
+        <!-- Содержимое боковой панели -->
+        <div class="position-sticky">
+          <div class="sidebar-logo">
+            <a href="#">Проверка.ru</a>
+
+          </div>
+
+          <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="lni lni-dashboard"></i>
+                <span>Проверки</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="lni lni-cloud-check"></i>
+                <span class="text-wrap">Шаблонные задачи</span>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-users"></i>
+                <span>Проверяющие</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-archive"></i>
+                <span>Сотрудники</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-stats-up"></i>
+                <span>Статистика</span>
+              </a>
+            </li>
+            <li class="nav-item mt-1">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-question-circle"></i>
+                <span>Обратная связь</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <hr class="hr" />
+          <ul class="nav flex-column sidebar-nav">
+            <a href="#" class="nav-link active">
+              <i class="lni lni-user"></i>
+              <span>Профиль</span>
+            </a>
+
+
+            <a href="#" class="nav-link active">
+              <i class="lni lni-close"></i>
+              <span>Выход</span>
+            </a>
+          </ul>
+
+        </div>
+
+      </nav>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mobileSidebarLabel">Проверка.ru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- Содержимое боковой панели -->
+          <div class="sidebar-logo">
+            <a href="#">Проверка.ru</a>
+          </div>
+
+          <ul class="nav flex-column sidebar-nav ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="lni lni-dashboard"></i>
+                <span>Проверки</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="lni lni-cloud-check"></i>
+                <span>Шаблонные задачи</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-users"></i>
+                <span>Проверяющие</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-archive"></i>
+                <span>Сотрудники</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-stats-up"></i>
+                <span>Статистика</span>
+              </a>
+            </li>
+            <li class="nav-item mt-1">
+              <a href="#" class="nav-link active">
+                <i class="lni lni-question-circle"></i>
+                <span>Обратная связь</span>
+              </a>
+            </li>
+          </ul>
+
+          <hr class="hr" />
+          <ul class="nav flex-column sidebar-nav">
+            <a href="#" class="nav-link active">
+              <i class="lni lni-user"></i>
+              <span>Профиль</span>
+            </a>
+            <a href="#" class="nav-link active">
+              <i class="lni lni-close"></i>
+              <span>Выход</span>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <main class="col-xxl-10 col-xl-10  p-0">
+        <nav class="navbar navbar-light bg-light sticky-top   ">
+          <div class="container-fluid ">
+            <nav class="navbar  p-0">
+              <a class="navbar-brand " href="#">
+                <i class="bi bi-arrow-left" style="color: rgba(132, 132, 132, 0.6);"></i>
+              </a>
+              <span>Сойка на Первомайской</span>
+            </nav>
+            <!-- Кнопка для показа/скрытия боковой панели на мобильных устройствах -->
+            <button class="btn-burger  d-xl-none" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+          </div>
+        </nav>
+        <div class="container-fluid py-3 ">
+          <div class="container ">
+            <div class="row mt-2 mb-3 mt-2">
+              <div class="d-flex align-items-center mb-3">
+                <h6 class="mb-0">Сегодня</h6>
+                <samp class="ms-2">среда</samp>
+              </div>
+              <div class="col-xxl-4 col-sm-6  mb-2 d-flex ">
+                <div class="card w-100" onclick="window.location.href='YOUR_URL_HERE';" style="cursor: pointer;">
+                
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-green me-2 col-md-2 ">Исполнено</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Со звездочкой -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-green me-2 ">Исполнено</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Закончил со звездочкой -->
+              <!-- Отказ -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-red me-2 ">Отказ</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                              data-bs-target="#editModal">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                              data-bs-target="#deleteModal">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- закончил блок с отказом -->
+              <!-- Блок назначенно -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-blue me-2 ">Назначено</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- блок назначено знакон -->
+              <!-- Добавить обьект -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex">
+                <div class="card w-100" style="border: 2px dashed #ccc;  ">
+                  <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <button class="btn btn-link" style="text-decoration: none;" data-bs-toggle="modal"
+                      data-bs-target="#addObjectModal">
+                      <i class="lni lni-plus" style="font-size: 1.5rem;"></i>
+                      <!-- Иконка плюса, замените на вашу иконку, если используется другой класс -->
+                      <span style="display: block;">Добавить объект</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- закон. блок доб обьект -->
+            </div>
+            <!-- След день! -->
+            <div class="row mt-2 mb-3 mt-2">
+              <div class="d-flex align-items-center mb-3">
+                <h6 class="mb-0">Сегодня</h6>
+                <samp class="ms-2">среда</samp>
+              </div>
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-green me-2 ">Исполнено</span>
+                      </div>
+                      <div class="dropdown ">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Со звездочкой -->
+              <div class="col-xxl-4 col-xl-6 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between  ">
+                      <div class="col-sm-7">
+                        <span class="badge-orange">Проверка отчета</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0 " type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Закончил со звездочкой -->
+              <!-- Отказ -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-red me-2 ">Отказ</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- закончил блок с отказом -->
+              <!-- Блок назначенно -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex ">
+                <div class="card w-100">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between ">
+                      <div>
+                        <span class="badge-blue me-2 ">Назначено</span>
+                      </div>
+                      <div class="dropdown">
+                        <samp>Доставка</samp>
+                        <button class="btn btn-transparent p-0" type="button" id="dropdownMenuButton"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-three-dots-vertical"></i>
+
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Редактировать</a></li>
+                          <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                    <h3 class="mt-2 mb-3 text-break fw-bold fs-6 ">Проверка качества кухни</h3>
+                    <p class="card-text mt-4">
+                      <i class="bi bi-person-circle"></i>
+                      <span class="fs-6"> Константинопольский Константин</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- блок назначено знакон -->
+              <!-- Добавить обьект -->
+              <div class="col-xxl-4 col-sm-6 mb-2 d-flex">
+                <div class="card w-100" style="border: 2px dashed #ccc;  ">
+                  <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <button class="btn btn-link" style="text-decoration: none;" data-bs-toggle="modal"
+                      data-bs-target="#addObjectModal">
+                      <i class="lni lni-plus" style="font-size: 1.5rem;"></i>
+                      <!-- Иконка плюса, замените на вашу иконку, если используется другой класс -->
+                      <span style="display: block;">Добавить объект</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- закон. блок доб обьект -->
+            </div>
+
+            <!-- Модуль окно для добавления обьекта -->
+            <div class="modal fade" id="addObjectModal" tabindex="-1" aria-labelledby="addObjectModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content d-flex">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="addObjectModalLabel">Новый проверка</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+
+
+                  <div class="modal-body ">
+                    <div class="d-flex justify-content-start align-items-center mb-2">
+                      <b class="me-2">День проверки:</b><span>среда 29.09</span>
+                    </div>
+                    <!-- Контейнеры для данных -->
+                    <div class="mt-3">
+                      <b>Тип проверки</b>
+                      <select class="form-select w-100 mt-2" aria-label="Тип проверки">
+                        <option selected>Тип проверки</option>
+                        <option value="1">Объект</option>
+                      </select>
+                    </div>
+
+                    <!-- Задачи-->
+                    <div class="mt-3">
+                      <b>Выберите задачу</b>
+                      <select class="form-select w-100 mt-2" aria-label="Выберите задачу">
+                        <option selected>Выберите задачу</option>
+                        <option value="1">Задача 1</option>
+                      </select>
+                    </div>
+                    <!-- Выбор сотрудников -->
+                    <div class="mt-3">
+                      <b>Выберите сотрудника</b>
+                      <select class="form-select w-100 mt-2" aria-label="Выберите сотрудника">
+                        <option selected>Выберите сотрудника</option>
+                        <option value="1">Сотрудник 1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btns" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btnе" id="submitButton" disabled>Добавить на проверку</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Модальное окно для редактирования -->
+            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Редактировать проверку</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Форма для редактирования -->
+                    <form id="editForm">
+                      <!-- Поля формы -->
+                      <div class="mt-3">
+                        <b>Тип проверки</b>
+                        <select class="form-select w-100 mt-2" aria-label="Тип проверки">
+                          <option selected>Тип проверки</option>
+                          <option value="1">Объект</option>
+                        </select>
+                      </div>
+                      <div class="mt-3">
+                        <b>Задача</b>
+                        <select class="form-select w-100 mt-2" aria-label="Выберите задачу">
+                          <option selected>Выберите задачу</option>
+                          <option value="1">Задача 1</option>
+                        </select>
+                      </div>
+                      <div class="mt-3">
+                        <b>Проверяющий</b>
+                        <select class="form-select w-100 mt-2" aria-label="Выберите сотрудника">
+                          <option selected>Выберите сотрудника</option>
+                          <option value="1">Сотрудник 1</option>
+                        </select>
+                      </div>
+                      <!-- Дополнительные поля формы -->
+                      <!-- ... -->
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btns" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btnе" form="editForm">Сохранить изменения</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Модель для удаление проверки -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Подтверждение удаления</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Вы уверены, что хотите удалить этот объект?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn-otmena" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn-delet" id="deleteConfirmButton">Удалить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </main>
+
+  </div>
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

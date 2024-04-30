@@ -1,0 +1,572 @@
+!-- Password -->
+                        <label for="pswrd">Введите пароль</label>
+                        <input type="password" placeholder="Enter Password" name="pswrd" required>
+            
+                        <!-- sub container for the checkbox and forgot password link -->
+                        <div class="subcontainer">
+                            <p class="forgotpsd"> <a href="#">Забыли пароль?</a></p>
+                        </div>
+            
+            
+                        <!-- Submit button -->
+                        <button type="submit">Войти</button>
+            
+                        <!-- Sign up link -->
+                        <p class="register">У вас нет аккаунта?<a href="#">Зарегистрироваться</a></p>
+
+
+
+
+                                <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                          <label class="form-check-label" for="form2Example31"> Remember me </label>
+                        </div>
+                      </div>
+                  
+                      <div class="col">
+                        <!-- Simple link -->
+                        <a href="#!">Forgot password?</a>
+                      </div>
+                    </div>
+                  
+                    <!-- Submit button -->
+                    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+
+
+
+
+
+
+
+                    <div class="position-absolute top-50 start-50 translate-middle form_avtoriz">
+                      <h6 class='d-flex justify-content-start m-3 p-2 avto'>Авторизация</h6>
+                      <hr class="hr hr-blurry" />
+                      <div class="button-variant m-3 p-2">
+                          <button type="button" class="btn btn-outline-primary ">
+                              Войти с помощью
+                              <img src="image/iconfinder-social-media-applications-32vk-4102593_113806 (1).png" alt="" srcset="" class="m">
+                          </button>
+                          <h6 class="q1 ">или с помощью почты и пороля</h6>  
+                      </div>
+                      <form>
+                          <div class="conteiner-form">
+                              
+                              <div class="mb-4">
+                                  <input type="login" class="form-control login" id="username" name="username" required placeholder="Login">
+                              </div>
+                            <div class="mb-3">
+                              <input type="password" class="form-control password" id="password" name="password" required  placeholder="password">
+                            </div>
+                            <div class="d-flex flex-wrap justify-content-between align-items-center vxod">
+                              <div>
+                                  <button type="submit" class="btn btn-custom">Войти</button>
+                              </div>
+                              <div class="d-flex align-items-center pp" >
+                                  <a href="" class="m-0 mr-0  pp">Забыли пароль?</a>
+                              </div>
+                          </div>                
+                      </form>
+                     
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center vh-100">
+                        <div class="col-md-6">
+                            <div class="card ">
+                                <div class="card-body  d-flex flex-column flex-grow-2">
+                                    <h4 class="mb-1">Регистрация</h4>
+                                    <hr>
+                                    <form>
+                                        <div class="tab">
+                                            <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+                                            <label for="tab-btn-1">Компания</label>
+            
+                                            <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+                                            <label for="tab-btn-2">Проверяющий</label>
+                                        
+                                            <div class="tab-content" id="content-1">
+                                                <button type="submit" class="btn btn-primary exit_vk">Зарегистрироваться с помощью <img src="/project/image/iconfinder-social-media-applications-32vk-4102593_113806 (1).png" 
+                                                    alt="" srcset="" class="m"></button>
+                                                    <p class="fs-7 text-secondary mt-3">Или с помощью почты и пароля</p>
+                                                    <form>
+                                                        <div class="mb-2">
+                                                            <label for="companyInput">Компания</label>
+                                                            <input type="text" class="form-control" id="companyInput" placeholder="Введите компанию">
+                                                        </div>
+                                                     
+                                                        <div class="mb-2">
+                                                            <label for="exampleInputEmail1" class="form-label">Эл. почта</label>
+                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите пароль">
+                                                        </div>
+            
+                                                        <div class="mb-4">
+                                                            <label for="password" class="form-label">Пароль</label>
+                                                            <input type="password" class="form-control" id="password" name="password" required placeholder="Введите пароль">
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                                            <button type="submit" class="btn exit">Зарегистрироваться</button>
+                                                           
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center ">
+                                                            <div class="col">
+                                                                <p class="fons">
+                                                                    <b class="text-muted">Нажимая на кнопку,</b> вы соглашаетесь с Политикой обработки персональных данных
+                                                                </p>
+                                                        </div>
+                                                    </form>    
+                                            </div>
+                                            <div class="tab-content" id="content-2">
+                                                    <div class="mb-2">
+                                                        <label for="companyInput">Компания</label>
+                                                        <input type="text" class="form-control" id="companyInput" placeholder="Введите компанию">
+                                                    </div>
+                                                 
+                                                    <div class="mb-2">
+                                                        <label for="exampleInputEmail1" class="form-label">Эл. почта</label>
+                                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите пароль">
+                                                    </div>
+            
+                                                    <div class="mb-4">
+                                                        <label for="password" class="form-label">Пароль</label>
+                                                        <input type="password" class="form-control" id="password" name="password" required placeholder="Введите пароль">
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                                        <button type="submit" class="btn exit">Зарегистрироваться</button>
+                                                       
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center ">
+                                                        <div class="col">
+                                                            <p class="fons">
+                                                                <b class="text-muted">Нажимая на кнопку,</b> вы соглашаетесь с Политикой обработки персональных данных
+                                                            </p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="row justify-content-center">
+                            <div class="col-md-6  text-center">
+                                <p>Уже есть аккаунт? <a href="registrasia.html" class="hrefs">Войти</a></p>
+                            </div>
+                        </div> -->
+                    </div>        
+               
+                </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <nav class="col-md-2 d-none d-md-block sidebar">
+            
+          </nav>
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="content">
+              <!-- Your content here -->
+              <p>Добавьте первый объект для планирования проверок</p>
+              <button class="object-button">Добавить объект</button>
+            </div>
+          </main>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+
+
+
+
+
+
+
+                ::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: rgba(243, 243, 243, 1);
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: rgb(42, 137, 25);
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+    /* подвинуть в другую сторону или опустить в низ */
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+    
+}
+
+
+
+
+
+
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+}
+/* за наведение на элементы */
+a.sidebar-link:hover {
+    color: black;
+    background-color: rgba(232, 232, 232, 1);
+    border: 3px solid rgba(227, 225, 225, 1);
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.logo-main{
+    width: 50px;
+}
+.block-mail{
+    font-size: 10px;
+    margin-top: 10px;
+    
+}
+
+
+.sidebar-link i {
+    display: inline-block; /* Устанавливаем изображения как блочные элементы */
+    vertical-align: middle; /* Выравниваем их по вертикали к центру */
+    margin-right: 10px; /* Добавляем отступ справа, если нужно смещение */
+}
+
+
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Высота зеленой черты */
+    background-color: transparent; /* Начально прозрачный */
+    transform: scaleX(0); /* Начнем с нулевой ширины */
+    transition: transform 0.3s, background-color 0.3s; /* Плавное появление черты */
+}
+
+.nav-link:hover::after {
+    background-color: green; /* Цвет зеленой черты при наведении */
+    transform: scaleX(1); /* Показываем зеленую черту при наведении */
+}
+
+/* мобилка */
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.logo-main {
+    width: 50px;
+}
+
+.block-mail {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.sidebar-link i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover::after {
+    background-color: green;
+    transform: scaleX(1);
+}
+/* Добавление и стилизация иконки бургер-меню */
+.burger-menu {
+    display: none; /* По умолчанию скрыто на десктопе */
+    cursor: pointer;
+}
+
+.burger-menu i {
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
+
+
+
+.burger-menu {
+    display: none;
+    
+}
+
+/* Скрыть зеленую полоску на мобильных устройствах */
+.nav-link:hover::after {
+    background-color: transparent;
+    transform: scaleX(0);
+}
+
+/* Показывать бургер-меню на мобильных устройствах */
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Скрыть логотип и пункты меню на мобильных устройствах */
+    #sidebar .sidebar-logo,
+    #sidebar .sidebar-nav {
+        display: none;
+    }
+
+    /* Показывать боковое меню при активации класса */
+    #sidebar.show-sidebar {
+        display: block;
+        transition: all .25s ease-in-out;
+        z-index: 1000;
+        background-color: rgb(42, 137, 25);
+        width: 100%; /* Полная ширина на мобильных устройствах */
+    }
+    .burger-menu {
+        display: block; /* Показать на мобильных устройствах */
+        padding: 1rem; /* Задать отступы */
+    }
+
+    /* Скрытие логотипа на мобильных устройствах */
+    #sidebar:not(.expand) .sidebar-logo,
+    #sidebar:not(.expand) a.sidebar-link span {
+        display: none;
+    }
+
+    /* Скрытие пунктов меню на мобильных устройствах */
+    #sidebar:not(.expand) .sidebar-nav {
+        display: none;
+    }
+
+    /* Показ пунктов меню при развернутом бургер-меню */
+    #sidebar.expand .sidebar-nav {
+        display: block;
+    }
+}
+-----------
+       
+        <!-- <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="d-flex">
+                    <button class="toggle-btn" type="button">
+                        <i class="lni lni-grid-alt"></i>
+                    </button>
+                    <div class="sidebar-logo">
+                        <a href="#">CodzSword</a>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-package"></i>
+                            <span>Проверки</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-cloud-check"></i>
+                            <span>Шаблонные задачи</span>
+                        </a>
+                    </li>
+    
+    
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-users"></i>
+                            <span>Проверяющие</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-archive"></i>
+                            <span>Сотрудники</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-stats-up"></i>
+                            <span>Статистика</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item mt-1">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-question-circle"></i>
+                            <span>Обратная связь</span>
+                        </a>
+                    </li>
+                </ul> 
+            </nav> -->
+            

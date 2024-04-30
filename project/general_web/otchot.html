@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/project/css/otchot.css">
+    <title>Отчет</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Боковая панель -->
+            <nav class=" nav navbar-expand-lg col-xxl-2 col-md-2  d-none d-xl-block sticky-top p-0" id="desktopSidebar">
+                <!-- Содержимое боковой панели -->
+                <div class="position-sticky">
+                    <div class="sidebar-logo">
+                        <a href="#">Проверка.ru</a>
+
+                    </div>
+
+                    <ul class="nav flex-column sidebar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="lni lni-dashboard"></i>
+                                <span>Проверки</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="lni lni-cloud-check"></i>
+                                <span class="text-wrap">Шаблонные задачи</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-users"></i>
+                                <span>Проверяющие</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-archive"></i>
+                                <span>Сотрудники</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-stats-up"></i>
+                                <span>Статистика</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-question-circle"></i>
+                                <span>Обратная связь</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <hr class="hr" />
+                    <ul class="nav flex-column sidebar-nav">
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-user"></i>
+                            <span>Профиль</span>
+                        </a>
+
+
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-close"></i>
+                            <span>Выход</span>
+                        </a>
+                    </ul>
+
+                </div>
+
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar"
+                aria-labelledby="mobileSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="mobileSidebarLabel">Проверка.ru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <!-- Содержимое боковой панели -->
+                    <div class="sidebar-logo">
+                        <a href="#">Проверка.ru</a>
+                    </div>
+
+                    <ul class="nav flex-column sidebar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="lni lni-dashboard"></i>
+                                <span>Проверки</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="lni lni-cloud-check"></i>
+                                <span>Шаблонные задачи</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-users"></i>
+                                <span>Проверяющие</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-archive"></i>
+                                <span>Сотрудники</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-stats-up"></i>
+                                <span>Статистика</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-question-circle"></i>
+                                <span>Обратная связь</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <hr class="hr" />
+                    <ul class="nav flex-column sidebar-nav">
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-user"></i>
+                            <span>Профиль</span>
+                        </a>
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-close"></i>
+                            <span>Выход</span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <main class="col-xxl-10 col-xl-10  p-0">
+                <nav class="navbar navbar-light bg-light sticky-top   ">
+                    <div class="container-fluid ">
+                      <nav class="navbar  p-0">
+                        <a class="navbar-brand " href="#">
+                          <i class="bi bi-arrow-left" style="color: rgba(132, 132, 132, 0.6);"></i>
+                        </a>
+                        <span>Проверка качества кухни</span>
+                      </nav>
+                      <!-- Кнопка для показа/скрытия боковой панели на мобильных устройствах -->
+                      <button class="btn-burger  d-xl-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+          
+                    </div>
+                  </nav>
+                  <div class="container mt-3">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <!-- Row for progress circle and details -->
+                            <div class="row">
+                              <!-- Progress Circle Column -->
+                              <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                <div class="progress-circle">
+                                  <span class="progress-value">70.5%</span>
+                                  <!-- Use a plugin or custom CSS to create the circular progress bar -->
+                                </div>
+                              </div>
+                              <!-- Details Column -->
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <span class="card-title badge-orange">Проверка отчета</span>
+                                </div>
+                                <div class="col-md-8 d-flex align-items-center"> 
+                                    <div class="flex-grow-1">
+                                      <div class="d-flex justify-content-between">
+                                        <p class="mb-0"><strong class="sting">Дата проверки:</strong> 25.08.2021</p>
+                                        <p class="mb-0"><strong class="sting">Тип проверки:</strong> Объект</p>
+                                        <p class="mb-0"><strong class="sting">Проверяющий:</strong> Константинопольский Константин</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <!-- Buttons Column -->
+                              <div class="col-md-2 d-flex justify-content-end">
+                                <div>
+                                  <button class="btn btn-outline-primary btn-sm me-1">Скачать (docx)</button>
+                                  <button class="btn btn-success btn-sm">Статус</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h4 >Проверка экстерьера</h4>
+                        <strong>Баллов – 1 из 4 (25%)</strong>
+                    </div>
+                    <div class="card card-templ">
+                        <div class="card-body">
+                          
+                          <p class="card-text">Посетите ресторан Сойка на Первомайской, 24, подготовившись по инструкции</p>
+                          <div class="mb-3">
+                            <strong>Быстрый взглядом осмотрите урну у входа</strong>
+                            <div class="mt-2">
+                              <label class="form-label">Оцените уровень её заполненности</label>
+                              <select class="form-select">
+                                <option value="1">Урна переполнена</option>
+                                <option value="2">Урна наполовину заполнена</option>
+                                <option value="3">Урна пуста</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <strong>Насколько чисто у входа?</strong>
+                            <div class="mt-2">
+                              <label class="form-label">Оцените чистоту порога</label>
+                              <select class="form-select">
+                                <option value="1">Чисто</option>
+                                <option value="2">Требуется уборка</option>
+                                <option value="3">Грязно</option>
+                              </select>
+                            </div>
+                          
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+
+
+
+            </main>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+</body>
+
+</html>

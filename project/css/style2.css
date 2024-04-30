@@ -1,0 +1,92 @@
+tab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+.tab > input[type="radio"] {
+    display: none;
+}
+  
+.tab-content {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+}
+  
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2 {
+    display: block;
+  }
+  
+.tab > label {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out, border-color .15s ease-in-out;
+    color: rgb(0, 0, 0);
+    background: 0 0;
+    border-bottom: 0.125rem solid transparent;
+    margin-right: 1rem;
+}
+  
+.tab > label:hover {
+    border-bottom-color: rgba(20, 184, 144, 1);
+  }
+  
+.tab > input[type="radio"]:checked + label {
+    cursor: default;
+    font-weight: bold;
+    color: rgba(20, 184, 144, 1);
+    border-bottom-color: rgba(20, 184, 144, 1);
+  }
+
+
+.card{
+    width: 400px;
+    margin: 0 auto 
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Растягиваем на всю доступную высоту */
+}
+body{
+
+    background-color: rgba(227, 225, 225, 1);
+}
+
+.exit{
+    background-color: rgb(114, 187, 170);
+    border-color:  rgb(114, 187, 170);
+    color: rgba(255, 255, 255, 1);
+}
+.exit:active {
+    background-color: rgb(14, 113, 90) !important; 
+    color:  rgba(255, 255, 255, 1) !important; 
+}
+.exit:hover{
+    background-color: rgb(14, 113, 90);
+    border-color:  rgb(14, 113, 90);
+    color: rgba(255, 255, 255, 1);
+}
+
+.m{
+    width: 16px;
+    height: 16px;
+  }
+
+.fons{
+    font-size: 15px;
+}
+
+.hrefs{
+    color: rgb(28, 180, 144);
+  }
+
+  a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    color: rgb(168, 168, 168); /* Устанавливаем цвет ссылки */
+    cursor: pointer; /* Заменяем курсор на указатель при наведении */
+  }

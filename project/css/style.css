@@ -1,0 +1,157 @@
+body{
+  background-color: rgba(227, 225, 225, 1);
+}
+
+/* .form_avtoriz{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 15px;
+}
+.avto{
+    color: #2C3030;
+    font-size: 20px;
+}
+.button-variant{
+    width: 218px;
+    height: 18px;
+
+}
+
+.q1{
+    color: #9A9C9C;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.qq{
+    margin-top: 100px;
+    margin-left: 25px;
+}
+
+.conteiner-form{
+  width: 70%;
+  margin-left: 25px;
+  margin-top: 70px;
+}
+
+
+input[type='password'], input[type='login'] {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+
+.btn-custom{
+  background-color: rgb(114, 187, 170);
+  color: rgba(255, 255, 255, 1);
+  /* margin-top: 20px; */
+/* } */
+
+/* .btn-custom:hover{
+  background-color: rgba(20, 184, 144, 1);
+  color: rgb(255, 255, 255);
+  
+}
+.pp{
+  font-size: 13px;
+  color: #9A9C9C;
+  margin-right: 68px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Чтобы ссылка оставалась тем же цветом, что и текст */
+/* } */
+/* 
+.vxod{
+  margin-top: 30px;
+}
+ */
+
+
+
+
+
+/* .q{
+  background-color: rgb(242, 242, 242);
+  margin: auto;
+  padding: 50px;
+  
+}
+
+
+
+input[type='password'], input[type='login'] {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}  */ 
+
+
+
+
+.card{
+  width: 400px;
+  height: 420px;
+  margin: 0 auto 
+}
+h6{
+  color: rgb(192, 192, 192);
+
+}
+.m{
+  width: 16px;
+  height: 16px;
+}
+
+a {
+  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  color: rgb(168, 168, 168); /* Устанавливаем цвет ссылки */
+  cursor: pointer; /* Заменяем курсор на указатель при наведении */
+}
+
+button, a {
+  margin-right: 10px;  /* Добавляем отступ между кнопкой "Войти" и ссылкой "Забыли пароль?" */
+}
+
+.exit{
+  background-color: rgb(114, 187, 170);
+  border-color:  rgb(114, 187, 170);
+  color: rgba(255, 255, 255, 1);
+
+}
+.exit:active {
+  background-color: rgb(14, 113, 90) !important; 
+  color:  rgba(255, 255, 255, 1) !important; 
+}
+
+.exit:hover{
+  background-color: rgb(14, 113, 90);
+  border-color:  rgb(14, 113, 90);
+  color: rgba(255, 255, 255, 1);
+}
+
+.hrefs{
+  color: rgb(28, 180, 144);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

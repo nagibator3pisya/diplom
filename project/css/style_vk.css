@@ -1,0 +1,40 @@
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Растягиваем на всю доступную высоту */
+}
+body{
+
+    background-color: rgba(227, 225, 225, 1);
+}
+.card{
+    width: 400px;
+    margin: 0 auto 
+}
+
+.exit{
+    background-color: rgb(114, 187, 170);
+    border-color:  rgb(114, 187, 170);
+    color: rgba(255, 255, 255, 1);
+}
+.exit:active {
+    background-color: rgb(14, 113, 90) !important; 
+    color:  rgba(255, 255, 255, 1) !important; 
+}
+.exit:hover{
+    background-color: rgb(14, 113, 90);
+    border-color:  rgb(14, 113, 90);
+    color: rgba(255, 255, 255, 1);
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    color: rgb(168, 168, 168); /* Устанавливаем цвет ссылки */
+    cursor: pointer; /* Заменяем курсор на указатель при наведении */
+}
+
+.hrefs{
+    color: rgb(28, 180, 144);
+}
+  
