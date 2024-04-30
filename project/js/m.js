@@ -47,10 +47,29 @@ function addCategory(categoryName) {
 
          
         </div>
-        <button type="button" onclick="addSubcategory()" class='add_subtask mt-5'>
-        Добавить подзадачу
+        <div class="task-controls">
+        <div class="add-subtask-container" onclick="toggleDropdown()" style="border: 2px dashed #ccc; height: 118px;">
+            <div id="subcategoryDropdown" style="display: none;">
+                <select class="form-select" aria-label="Выберите тип подзадачи">
+                    <option selected>Выберите из списка</option>
+                    <option value="1">Один вариант ответа</option>
+                    <option value="2">Несколько вариантов ответа</option>
+                    <option value="3">Текстовое поле</option>
+                    <option value="4">Фото</option>
+                    <option value="5">Фото с примером</option>
+                    <option value="6">Прикрепление файла</option>
+                </select>
+                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-danger" onclick="toggleDropdown()">Отмена</button>
+            </div>
+            <span class="add-subtask-label">+ Добавить подзадачу</span>
+        </div>
+    </div>
+    
+    
+    
+
         
-        </button>
         <div id="subcategoryContainer"></div>
         <button type="button" id="newCategoryBtn" onclick="addCategoryField()">Добавить категорию</button>
     `;
@@ -345,25 +364,21 @@ function resetCategoryForm() {
 // это косаемо спрятать кнопки и тд
 
 // Это связанные с добавить подзадачу, выподает список
-function addSubcategory() {
-    var dropdownContainer = document.getElementById('subcategoryDropdown');
-    dropdownContainer.innerHTML = `
-        <select class="form-select" aria-label="Выберите тип подзадачи">
-            <option selected>Выберите из списка</option>
-            <option value="1">Один вариант ответа</option>
-            <option value="2">Несколько вариантов ответа</option>
-            <option value="3">Текстовое поле</option>
-            <option value="4">Фото</option>
-            <option value="5">Фото с примером</option>
-            <option value="6">Прикрепление файла</option>
-        </select>
-    `;
-    // Скрытие других кнопок
-    document.querySelector('.btn-light-tab2').style.display = 'none';
-    document.querySelector('.btn-otmena-tab2').style.display = 'none';
-    document.querySelector('.btn-sybmit-tab2').style.display = 'none';
-    document.getElementById('addCategoryBtn').style.display = 'none';
+function toggleDropdown() {
+    var dropdown = document.getElementById('subcategoryDropdown');
+    var isVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block'; // Переключаем видимость
+    var label = document.querySelector('.add-subtask-label');
+    label.style.display = isVisible ? 'block' : 'none'; // Переключаем видимость надписи
+
+    // Переключение видимости других элементов управления
+    document.querySelector('.btn-light-tab2').style.display = isVisible ? 'inline-block' : 'none';
+    document.querySelector('.btn-otmena-tab2').style.display = isVisible ? 'inline-block' : 'none';
+    document.querySelector('.btn-sybmit-tab2').style.display = isVisible ? 'inline-block' : 'none';
+    document.getElementById('addCategoryBtn').style.display = isVisible ? 'block' : 'none';
 }
+
+
 
 
 
