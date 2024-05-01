@@ -245,25 +245,31 @@ textarea {
 }
 /* кнопки js добавление подзадачи и доп катигории */
 .add-subtask-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
+  border: 2px dashed #ccc; 
+  width: 100%; 
+  height: 118px;
+  position: relative; /* Для абсолютного позиционирования выпадающего списка */
 }
 
 .add-subtask-label {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); /* Центрирование надписи */
+  cursor: pointer;
 }
 
 #subcategoryDropdown {
-  width: 100%;
-  display: none;
-  flex-direction: column;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+
+  padding: 10px; /* Оформление выпадающего списка */
+  box-sizing: border-box; /* Для корректного расчета ширины и высоты */
 }
+
 
 .bi-trash-fill,
 .bi-pencil-fill{

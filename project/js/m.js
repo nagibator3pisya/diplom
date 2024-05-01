@@ -48,23 +48,26 @@ function addCategory(categoryName) {
          
         </div>
         <div class="task-controls">
-        <div class="add-subtask-container" onclick="toggleDropdown()" style="border: 2px dashed #ccc; height: 118px;">
+        <div class="add-subtask-container" onclick="toggleDropdown()">
+            <span class="add-subtask-label">+ Добавить подзадачу</span>
             <div id="subcategoryDropdown" style="display: none;">
                 <select class="form-select" aria-label="Выберите тип подзадачи">
                     <option selected>Выберите из списка</option>
                     <option value="1">Один вариант ответа</option>
                     <option value="2">Несколько вариантов ответа</option>
                     <option value="3">Текстовое поле</option>
-                    <option value="4">Фото</option>
-                    <option value="5">Фото с примером</option>
-                    <option value="6">Прикрепление файла</option>
+                    <!-- Добавьте дополнительные опции здесь -->
                 </select>
                 <button class="btn btn-success">Сохранить</button>
-                <button class="btn btn-danger" onclick="toggleDropdown()">Отмена</button>
+                <button class="btn btn-danger">Отмена</button>
             </div>
-            <span class="add-subtask-label">+ Добавить подзадачу</span>
         </div>
-    </div>
+    
+    
+    
+    
+    
+    
     
     
     
@@ -85,7 +88,7 @@ function editCategory(element) {
         console.error('Category item not found.');
         return; // Выходим из функции, если элемент категории не найден
     }
-    
+
     var currentNameElement = categoryItem.querySelector('h2');
     if (!currentNameElement) {
         console.error('Element h2 not found within the category item.');
@@ -364,23 +367,46 @@ function resetCategoryForm() {
 // это косаемо спрятать кнопки и тд
 
 // Это связанные с добавить подзадачу, выподает список
+// Эта функция будет вызываться при полной загрузке содержимого DOM.
+// Глобальное объявление функции для доступности из HTML
 function toggleDropdown() {
-    var dropdown = document.getElementById('subcategoryDropdown');
-    var isVisible = dropdown.style.display === 'block';
-    dropdown.style.display = isVisible ? 'none' : 'block'; // Переключаем видимость
-    var label = document.querySelector('.add-subtask-label');
-    label.style.display = isVisible ? 'block' : 'none'; // Переключаем видимость надписи
+    const dropdown = document.getElementById('subcategoryDropdown');
+    const label = document.querySelector('.add-subtask-label');
+    const isDropdownVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isDropdownVisible ? 'none' : 'block';
+    label.textContent = isDropdownVisible ? '+ Добавить подзадачу' : '- Скрыть подзадачу';
 
-    // Переключение видимости других элементов управления
-    document.querySelector('.btn-light-tab2').style.display = isVisible ? 'inline-block' : 'none';
-    document.querySelector('.btn-otmena-tab2').style.display = isVisible ? 'inline-block' : 'none';
-    document.querySelector('.btn-sybmit-tab2').style.display = isVisible ? 'inline-block' : 'none';
-    document.getElementById('addCategoryBtn').style.display = isVisible ? 'block' : 'none';
+    // Переключение видимости остальных кнопок
+    const controlButtons = document.querySelectorAll('.btn-light-tab2, .btn-otmena-tab2, .btn-sybmit-tab2, #addCategoryBtn');
+    controlButtons.forEach(button => {
+        button.style.display = isDropdownVisible ? 'inline-block' : 'none';
+    });
 }
 
+// Убеждаемся, что DOM полностью загружен перед добавлением обработчиков событий
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.getElementById('subcategoryDropdown');
+    const label = document.querySelector('.add-subtask-label');
 
+    // Убеждаемся, что все элементы существуют
+    if (!dropdown || !label) {
+        console.error("Some elements are not found in the DOM.");
+        return;
+    }
 
+    // Предотвращение всплытия событий внутри dropdown
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 
+    // Закрытие dropdown при клике вне его области
+    document.addEventListener('click', function(event) {
+        if (!dropdown.contains(event.target) && !label.contains(event.target)) {
+            dropdown.style.display = 'none';
+            label.textContent = '+ Добавить подзадачу';
+        }
+    });
+});
 
 // 
 
