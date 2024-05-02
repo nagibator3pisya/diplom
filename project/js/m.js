@@ -373,37 +373,50 @@ function resetCategoryForm() {
 // это косаемо спрятать кнопки и тд
 
 function toggleDropdown(event) {
-    event.stopPropagation(); // Останавливаем всплытие события, чтобы избежать закрытия при кликах внутри
+    event.stopPropagation(); // Останавливаем всплытие события
     var dropdown = document.getElementById('subcategoryDropdown');
-    dropdown.style.display = 'block'; // Показываем dropdown
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+    
+    dropdown.style.display = 'block'; // Показываем выпадающий список
+    addSubtaskLabel.style.display = 'none'; // Скрываем надпись "Добавить подзадачу"
 }
 
 function closeDropdown(event) {
     if (event) {
-        event.preventDefault();  // Предотвратить дальнейшую отправку формы
-        event.stopPropagation();  // Остановить всплытие события
+        event.preventDefault(); // Предотвратить дальнейшую отправку формы
+        event.stopPropagation(); // Остановить всплытие события
     }
     var dropdown = document.getElementById('subcategoryDropdown');
-    dropdown.style.display = 'none';
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+
+    dropdown.style.display = 'none'; // Скрываем выпадающий список
+    addSubtaskLabel.style.display = 'inline'; // Показываем надпись "Добавить подзадачу"
 }
 
-// Добавление обработчиков для защиты от всплытия событий в dropdown
 document.addEventListener('DOMContentLoaded', function() {
     var dropdown = document.getElementById('subcategoryDropdown');
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+    var container = document.querySelector('.add-subtask-container');
+
+    container.addEventListener('click', function(event) {
+        if (event.target === addSubtaskLabel) {
+            toggleDropdown(event);
+        }
+    });
+
+    var cancelButton = document.querySelector('.btn-danger');
+    if (cancelButton) {
+        cancelButton.addEventListener('click', closeDropdown);
+    }
+
+    // Останавливаем всплытие для кликов внутри выпадающего списка
     if (dropdown) {
         dropdown.addEventListener('click', function(event) {
-            event.stopPropagation(); // Предотвращаем всплытие кликов внутри dropdown
+            event.stopPropagation();
         });
     }
 });
 
-// Обработка клика по документу для закрытия dropdown при клике вне его области
-document.addEventListener('click', function(event) {
-    var dropdown = document.getElementById('subcategoryDropdown');
-    if (dropdown.style.display === 'block' && !event.target.closest('.add-subtask-container')) {
-        closeDropdown();
-    }
-});
 
 
 
