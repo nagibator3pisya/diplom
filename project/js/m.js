@@ -40,53 +40,53 @@ function addCategory(categoryName) {
             <h2>${categoryName}</h2>
             <i class="bi bi-pencil-fill" onclick="editCategory(this)"></i>
             <i class="bi bi-trash-fill" onclick="deleteCategory(this)"></i>
-           
             <button type="button" class="btn btn-save me-2 ms-4" style="display:none" onclick="saveEditedCategory(this)">Сохранить</button>
-
             <button type="button" class="btn btn-cancel" style="display:none" onclick="cancelEdit(this)">Отмена</button>
-
-         
         </div>
-            
-                <div class="add-subtask-container" onclick="toggleDropdown(event)" style="border: 2px dashed #ccc; height: 118px;">
-                    <div id="subcategoryDropdown" style="display: none;">
-                        <select class="form-select" aria-label="Выберите тип подзадачи">
-                            <option selected>Выберите из списка</option>
-                            <option value="1">Один вариант ответа</option>
-                            <option value="2">Несколько вариантов ответа</option>
-                            <option value="3">Текстовое поле</option>
-                            <option value="4">Фото</option>
-                            <option value="5">Фото с примером</option>
-                            <option value="6">Прикрепление файла</option>
-                        </select>
-                        <button class="btn btn-success">Сохранить</button>
-                         <button class="btn btn-danger" onclick="event.stopPropagation(); closeDropdown();">Отмена</button>
-
-                    </div>
-                    <span class="add-subtask-label">+ Добавить подзадачу</span>
-                </div>
-           
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-        
+        <div class="add-subtask-container" style="border: 2px dashed #ccc; height: 118px;">
+            <div id="subcategoryDropdown" style="display: none;">
+                <select class="form-select" aria-label="Выберите тип подзадачи">
+                    <option selected>Выберите из списка</option>
+                    <option value="1">Один вариант ответа</option>
+                    <option value="2">Несколько вариантов ответа</option>
+                    <option value="3">Текстовое поле</option>
+                    <option value="4">Фото</option>
+                    <option value="5">Фото с примером</option>
+                    <option value="6">Прикрепление файла</option>
+                </select>
+                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-danger" onclick="event.stopPropagation(); closeDropdown();">Отмена</button>
+            </div>
+            <span class="add-subtask-label">+ Добавить подзадачу</span>
+        </div>
         <div id="subcategoryContainer"></div>
         <button type="button" id="newCategoryBtn" onclick="addCategoryField()">Добавить категорию</button>
-    `;
+        `;
+
         document.getElementById('contentDisplay').innerHTML = categoryDisplayHtml;
         clearCategoryField();
         document.querySelector('.btn-category').style.display = 'none';
+
+        // Установка обработчиков для динамически созданных элементов
+        setUpEventHandlers();
     }
 }
 
+function setUpEventHandlers() {
+    var dropdown = document.getElementById('subcategoryDropdown');
+    if (dropdown) {
+        dropdown.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    }
+
+    var container = document.querySelector('.add-subtask-container');
+    if (container) {
+        container.addEventListener('click', function(event) {
+            toggleDropdown(event);
+        });
+    }
+}
 function editCategory(element) {
     var categoryItem = element.closest('.category-name');
     if (!categoryItem) {
@@ -371,38 +371,60 @@ function resetCategoryForm() {
 }
 // это косаемо спрятать кнопки и тд
 
+// Функция для переключения видимости dropdown
 function toggleDropdown(event) {
-    event.stopPropagation();
+    event.stopPropagation(); // Останавливаем всплытие события
     var dropdown = document.getElementById('subcategoryDropdown');
     var label = document.querySelector('.add-subtask-label');
-    var container = document.querySelector('.add-subtask-container');
-    var isVisible = dropdown.style.display === 'block';
-    dropdown.style.display = isVisible ? 'none' : 'block';
-    label.textContent = isVisible ? '- Скрыть подзадачу' : '+ Добавить подзадачу';
-
-    function closeDropdown() {
-        dropdown.style.display = 'none';
-        label.textContent = '+ Добавить подзадачу';
+    if (!dropdown || !label) {
+        console.error('Dropdown or label element not found!');
+        return;
     }
-    // Измененный обработчик для контейнера
-    container.addEventListener('click', function(event) {
-        if (event.target === this || event.target === label) {
-            toggleDropdown(event);
-        }
-    });
 
-    dropdown.addEventListener('click', function (event) {
-        // Останавливаем всплытие событий кликов внутри выпадающего списка
+    var isVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block'; // Переключаем видимость
+    label.textContent = isVisible ? '- Скрыть подзадачу' : '+ Добавить подзадачу'; // Обновляем текст метки
+}
+
+// Функция для закрытия dropdown
+function closeDropdown() {
+    var dropdown = document.getElementById('subcategoryDropdown');
+    var label = document.querySelector('.add-subtask-label');
+    if (!dropdown || !label) {
+        console.error('Dropdown or label element not found!');
+        return;
+    }
+
+    dropdown.style.display = 'none';
+    label.textContent = '+ Добавить подзадачу';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.getElementById('subcategoryDropdown');
+    var container = document.querySelector('.add-subtask-container');
+    if (!dropdown || !container) {
+        console.error('Dropdown or container element not found!');
+        return;
+    }
+
+    // Останавливаем всплытие для кликов внутри dropdown
+    dropdown.addEventListener('click', function(event) {
         event.stopPropagation();
     });
 
-    document.addEventListener('click', function (event) {
-        // Закрытие выпадающего списка, если клик был вне контейнера
+    // Обработка клика на контейнер
+    container.addEventListener('click', function(event) {
+        toggleDropdown(event);
+    });
+
+    // Обработка клика вне dropdown для его закрытия
+    document.addEventListener('click', function(event) {
         if (!container.contains(event.target) && dropdown.style.display === 'block') {
             closeDropdown();
         }
     });
-}
+});
+
 
 
 
