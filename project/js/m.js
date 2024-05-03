@@ -55,6 +55,7 @@ function addCategory(categoryName) {
                         <option value="5">Фото с примером</option>
                         <option value="6">Прикрепление файла</option>
                     </select>
+                    <div id="formContainer"></div>
                     <button class="btn btn-seve mt-3">Сохранить</button>
                     <button class="btn btn-danger mt-3" onclick="closeDropdown(event);">Отмена</button>
                 </div>
@@ -72,21 +73,35 @@ function addCategory(categoryName) {
         setUpEventHandlers();
     }
 }
-
 function setUpEventHandlers() {
-    var dropdown = document.getElementById('subcategoryDropdown');
+    // Обработчик для выпадающего списка
+    const dropdown = document.querySelector('.add-subtask-container select.form-select');
     if (dropdown) {
-        dropdown.addEventListener('click', function(event) {
+        dropdown.addEventListener('change', function() {
+            updateForm(this.value);
+        });
+    }
+
+    // Обработчик для кнопки закрытия
+    const cancelButton = document.querySelector('.add-subtask-container .btn-danger');
+    if (cancelButton) {
+        cancelButton.addEventListener('click', closeDropdown);
+    }
+
+    // Остановка всплытия событий в выпадающем списке
+    const subcategoryDropdown = document.getElementById('subcategoryDropdown');
+    if (subcategoryDropdown) {
+        subcategoryDropdown.addEventListener('click', function(event) {
             event.stopPropagation();
         });
     }
 
-    var container = document.querySelector('.add-subtask-container');
-    if (container) {
-        container.addEventListener('click', function(event) {
-            toggleDropdown(event);
-        });
-    }
+    // Обработчик клика за пределами выпадающего списка для его закрытия
+    document.addEventListener('click', function(event) {
+        if (!document.querySelector('.add-subtask-container').contains(event.target)) {
+            closeDropdown();
+        }
+    });
 }
 function editCategory(element) {
     var categoryItem = element.closest('.category-name');
@@ -432,6 +447,68 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// когда я выбираю данные из выпадающиего списка
+function updateForm(selectedOption) {
+    let formHtml = '';
+    switch (selectedOption) {
+        case '1': // Один вариант ответа
+            formHtml = `
+                <div>Один вариант ответа</div>
+                <input type="text" placeholder="Введите ваш ответ" />
+            `;
+            break;
+        case '2': // Несколько вариантов ответа
+            formHtml = `
+                <div>Несколько вариантов ответа</div>
+                <input type="checkbox" /> Вариант 1<br />
+                <input type="checkbox" /> Вариант 2<br />
+            `;
+            break;
+        case '3': // Текстовое поле
+            formHtml = `
+                <div>Текстовое поле</div>
+                <textarea placeholder="Введите текст"></textarea>
+            `;
+            break;
+        case '4': // Фото
+            formHtml = `
+                <div>Фото</div>
+                <input type="file" accept="image/*" />
+            `;
+            break;
+        case '5': // Фото с примером
+            formHtml = `
+                <div>Фото с примером</div>
+                <input type="file" accept="image/*" />
+            `;
+            break;
+        case '6': // Прикрепление файла
+            formHtml = `
+                <div>Прикрепление файла</div>
+                <input type="file" />
+            `;
+            break;
+        default:
+            formHtml = '<div>Выберите опцию</div>';
+    }
+
+    const formContainer = document.getElementById('formContainer');
+    if (formContainer) {
+        formContainer.innerHTML = formHtml;
+    } else {
+        console.error('Form container not found');
+    }
+}
+
+function closeDropdown() {
+    const dropdown = document.getElementById('subcategoryDropdown');
+    if (dropdown) {
+        dropdown.style.display = 'none';
+    }
+}
+
+
+// 
 
 
 
