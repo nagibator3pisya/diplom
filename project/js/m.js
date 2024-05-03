@@ -44,21 +44,21 @@ function addCategory(categoryName) {
             <button type="button" class="btn btn-cancel" style="display:none" onclick="cancelEdit(this)">Отмена</button>
         </div>
         <div class="add-subtask-container" style="border: 2px dashed #ccc; padding: 10px;">
-        <span class="add-subtask-label" onclick="toggleDropdown(event)">+ Добавить подзадачу</span>
-        <div id="subcategoryDropdown" style="display: none;">
-            <select class="form-select" aria-label="Выберите тип подзадачи">
-                <option selected>Выберите из списка</option>
-                <option value="1">Один вариант ответа</option>
-                <option value="2">Несколько вариантов ответа</option>
-                <option value="3">Текстовое поле</option>
-                <option value="4">Фото</option>
-                <option value="5">Фото с примером</option>
-                <option value="6">Прикрепление файла</option>
-            </select>
-            <button class="btn btn-success">Сохранить</button>
-            <button class="btn btn-danger" onclick="closeDropdown(event);">Отмена</button>
+            <span class="add-subtask-label" onclick="toggleDropdown(event)">+ Добавить подзадачу</span>
+                <div id="subcategoryDropdown" style="display: none;">
+                    <select class="form-select" aria-label="Выберите тип подзадачи">
+                        <option selected>Выберите из списка</option>
+                        <option value="1">Один вариант ответа</option>
+                        <option value="2">Несколько вариантов ответа</option>
+                        <option value="3">Текстовое поле</option>
+                        <option value="4">Фото</option>
+                        <option value="5">Фото с примером</option>
+                        <option value="6">Прикрепление файла</option>
+                    </select>
+                    <button class="btn btn-seve mt-3">Сохранить</button>
+                    <button class="btn btn-danger mt-3" onclick="closeDropdown(event);">Отмена</button>
+                </div>
         </div>
-    </div>
     
         <div id="subcategoryContainer"></div>
         <button type="button" id="newCategoryBtn" onclick="addCategoryField()">Добавить категорию</button>
@@ -373,37 +373,66 @@ function resetCategoryForm() {
 // это косаемо спрятать кнопки и тд
 
 function toggleDropdown(event) {
-    event.stopPropagation(); // Останавливаем всплытие события, чтобы избежать закрытия при кликах внутри
+    event.stopPropagation(); // Останавливаем всплытие события
     var dropdown = document.getElementById('subcategoryDropdown');
-    dropdown.style.display = 'block'; // Показываем dropdown
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+    
+    dropdown.style.display = 'block'; // Показываем выпадающий список
+    addSubtaskLabel.style.display = 'none'; // Скрываем надпись "Добавить подзадачу"
 }
 
 function closeDropdown(event) {
     if (event) {
-        event.preventDefault();  // Предотвратить дальнейшую отправку формы
-        event.stopPropagation();  // Остановить всплытие события
+        event.preventDefault(); // Предотвратить дальнейшую отправку формы
+        event.stopPropagation(); // Остановить всплытие события
     }
     var dropdown = document.getElementById('subcategoryDropdown');
-    dropdown.style.display = 'none';
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+
+    dropdown.style.display = 'none'; // Скрываем выпадающий список
+    addSubtaskLabel.style.display = 'inline'; // Показываем надпись "Добавить подзадачу"
 }
 
-// Добавление обработчиков для защиты от всплытия событий в dropdown
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    console.log(document.getElementById('subcategoryDropdown')); // Проверьте, что элемент существует
+    console.log(document.querySelector('.add-subtask-label'));
+    console.log(document.querySelector('.add-subtask-container'));
+
     var dropdown = document.getElementById('subcategoryDropdown');
-    if (dropdown) {
-        dropdown.addEventListener('click', function(event) {
-            event.stopPropagation(); // Предотвращаем всплытие кликов внутри dropdown
-        });
+    var addSubtaskLabel = document.querySelector('.add-subtask-label');
+    var container = document.querySelector('.add-subtask-container');
+
+    if (!container) {
+        console.error('Container not found');
+        return; // Если контейнер не найден, останавливаем выполнение
     }
+
+    container.addEventListener('click', function(event) {
+        if (event.target === addSubtaskLabel) {
+            toggleDropdown(event);
+        }
+    });
+
+    var cancelButton = document.querySelector('.btn-danger');
+    if (!cancelButton) {
+        console.error('Cancel button not found');
+        return; // Если кнопка отмены не найдена, останавливаем выполнение
+    }
+
+    cancelButton.addEventListener('click', closeDropdown);
+
+    if (!dropdown) {
+        console.error('Dropdown not found');
+        return; // Если dropdown не найден, останавливаем выполнение
+    }
+
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 });
 
-// Обработка клика по документу для закрытия dropdown при клике вне его области
-document.addEventListener('click', function(event) {
-    var dropdown = document.getElementById('subcategoryDropdown');
-    if (dropdown.style.display === 'block' && !event.target.closest('.add-subtask-container')) {
-        closeDropdown();
-    }
-});
+
 
 
 

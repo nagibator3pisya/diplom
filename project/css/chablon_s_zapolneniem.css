@@ -132,18 +132,14 @@ textarea {
 }
 
 /* кнопки для сохранения и предосмотра */
+
 .btn-cancel,
 .btn-otmena-tab1,
 .btn-otmena-tab2  {
   background-color: rgb(255, 250, 250);
-  /* border-color:  rgb(185, 184, 184); */
   color: rgb(0, 0, 0);
-  /* border-radius: 5px; */
-  border: 2px solid rgba(90, 89, 89, 0.255);
+  border: 1px solid rgba(90, 89, 89, 0.255);
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
-  /* border-radius: 5px; */
-  padding: 5px;
-
 }
 .btn-cancel:active,
 .btn-otmena-tab1:active,
@@ -158,31 +154,29 @@ textarea {
   border-color: rgba(244, 67, 54, 1);
   color: rgba(255, 255, 255, 1);
 }
-.btn-save,
+/* кнопки сохранить */
+.btn-seve,
 .btn-sybmit-tab1,
 .btn-sybmit-tab2 {
   background-color: rgba(20, 184, 144, 1);
   border-color: rgba(20, 184, 144, 1);
   color: rgba(255, 255, 255, 1);
-  /* border-radius: 5px; */
-  padding: 5px;
-
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
-
 }
-.btn-save:active,
+.btn-seve:active,
 .btn-sybmit-tab1:active,
 .btn-sybmit-tab2:active  {
   background-color: rgb(14, 113, 90) !important;
   color: rgba(255, 255, 255, 1) !important;
 }
-.btn-save:hover,
+.btn-seve:hover,
 .btn-sybmit-tab1:hover,
 .btn-sybmit-tab2:hover {
   background-color: rgb(14, 113, 90);
   border-color: rgb(14, 113, 90);
   color: rgba(255, 255, 255, 1);
 }
+/*  */
 
 .btn-category{
   font-size: 20px;
@@ -200,29 +194,37 @@ textarea {
 .form-cont {
   border-radius: 5px;
 }
+.btn-cancellation,  .btn-save{
+  padding: 8px 10px; /* Пример значений, корректируйте по своему вкусу */
+  font-size: 15px; /* Пример значения, корректируйте по своему вкусу */
+}
 
 
+
+.btn-cancellation,
 .btn-otmena-js{
   background-color: rgb(255, 255, 255);
 
   color: rgb(0, 0, 0);
 
-  border: 2px solid rgba(90, 89, 89, 0.255);
+  border: 1px solid rgba(90, 89, 89, 0.255);
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
   /* padding: 5px; */
-  border-radius: 5px !important;
+  border-radius: 5px;
 }
+.btn-cancellation:hover,
 .btn-otmena-js:hover {
   background-color: rgba(244, 67, 54, 1);
   border-color: rgba(244, 67, 54, 1);
   color: rgba(255, 255, 255, 1);
 }
+.btn-cancellation:active,
 .btn-otmena-js:active {
   background-color: rgba(244, 67, 54, 1) !important;
   border-color: rgba(244, 67, 54, 1) !important;
   color: rgba(255, 255, 255, 1) !important;
 }
-
+.btn-save,
 .btn-dobavit-js {
   background-color: rgba(20, 184, 144, 1);
   border-color: rgba(20, 184, 144, 1);
@@ -233,11 +235,12 @@ textarea {
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
 
 }
+.btn-save:active,
 .btn-dobavit-js:active {
   background-color: rgb(14, 113, 90) !important;
   color: rgba(255, 255, 255, 1) !important;
 }
-
+.btn-save:hover,
 .btn-dobavit-js:hover {
   background-color: rgb(14, 113, 90);
   border-color: rgb(14, 113, 90);
@@ -249,6 +252,8 @@ textarea {
   width: 100%; 
   height: 118px;
   position: relative; /* Для абсолютного позиционирования выпадающего списка */
+  border-radius: 15px;
+  margin-top: 10px;
 }
 
 .add-subtask-label {
@@ -257,19 +262,24 @@ textarea {
   left: 50%; 
   transform: translate(-50%, -50%); /* Центрирование надписи */
   cursor: pointer;
+  color:rgba(154, 156, 156, 1);
+  font-size: 20px;
 }
 
 #subcategoryDropdown {
   position: absolute; 
-  top: 0; 
+  top: 1; 
   left: 0; 
   right: 0; 
   bottom: 0; 
-
+  
   padding: 10px; /* Оформление выпадающего списка */
   box-sizing: border-box; /* Для корректного расчета ширины и высоты */
 }
 
+.form-select{
+ width: 50%;
+}
 
 .bi-trash-fill,
 .bi-pencil-fill{
