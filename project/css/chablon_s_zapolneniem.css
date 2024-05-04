@@ -1,9 +1,4 @@
-.form-select {
-  width: 200px;
-  height: 38px;
-  border-radius: 5px;
-  border-color: rgb(179, 179, 179);
-}
+
 .form-select .selected {
   color: rgb(200, 200, 200);
 }
@@ -248,13 +243,15 @@ textarea {
 }
 /* кнопки js добавление подзадачи и доп катигории */
 .add-subtask-container {
-  border: 2px dashed #ccc; 
-  width: 100%; 
-  height: 118px;
-  position: relative; /* Для абсолютного позиционирования выпадающего списка */
+  border: 2px dashed #ccc;
+  width: 100%;
+  min-height: 118px;  /* Используйте min-height вместо height для гарантии минимального размера */
+  position: relative; /* Здесь можно сохранить relative для позиционирования дочерних элементов, если это необходимо */
   border-radius: 15px;
   margin-top: 10px;
+  overflow: hidden; /* Если вы хотите скрыть выходящее содержимое */
 }
+
 
 .add-subtask-label {
   position: absolute; 
@@ -268,18 +265,14 @@ textarea {
 
 #subcategoryDropdown {
   position: absolute; 
-  top: 1; 
+  top: 0; 
   left: 0; 
-  right: 0; 
-  bottom: 0; 
-  
-  padding: 10px; /* Оформление выпадающего списка */
-  box-sizing: border-box; /* Для корректного расчета ширины и высоты */
+  right: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.form-select{
- width: 50%;
-}
+
 
 .bi-trash-fill,
 .bi-pencil-fill{

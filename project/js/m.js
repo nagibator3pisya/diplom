@@ -43,27 +43,30 @@ function addCategory(categoryName) {
             <button type="button" class="btn btn-save me-2 ms-4" style="display:none" onclick="saveEditedCategory(this)">Сохранить</button>
             <button type="button" class="btn btn-cancel" style="display:none" onclick="cancelEdit(this)">Отмена</button>
         </div>
-        <div class="add-subtask-container" style="border: 2px dashed #ccc; padding: 10px;">
+        <div class="add-subtask-container">
             <span class="add-subtask-label" onclick="toggleDropdown(event)">+ Добавить подзадачу</span>
-                <div id="subcategoryDropdown" style="display: none;">
-                    <select class="form-select" aria-label="Выберите тип подзадачи">
-                        <option selected>Выберите из списка</option>
-                        <option value="1">Один вариант ответа</option>
-                        <option value="2">Несколько вариантов ответа</option>
-                        <option value="3">Текстовое поле</option>
-                        <option value="4">Фото</option>
-                        <option value="5">Фото с примером</option>
-                        <option value="6">Прикрепление файла</option>
-                    </select>
-                    <div id="formContainer"></div>
-                    <button class="btn btn-seve mt-3">Сохранить</button>
-                    <button class="btn btn-danger mt-3" onclick="closeDropdown(event);">Отмена</button>
+            <div id="subcategoryDropdown" style="display: none;">
+                <select class="form-select" aria-label="Выберите тип подзадачи">
+                    <option selected>Выберите из списка</option>
+                    <option value="1">Один вариант ответа</option>
+                    <option value="2">Несколько вариантов ответа</option>
+                    <option value="3">Текстовое поле</option>
+                    <option value="4">Фото</option>
+                    <option value="5">Фото с примером</option>
+                    <option value="6">Прикрепление файла</option>
+                </select>
+                </div>
+                <div id="formContainer"></div>
+                <div class="d-flex justify-content-start mt-2 ms-2 mb-2">
+                <button class="btn btn-seve mt-3 " style="display: none;">Сохранить</button>
+                <button class="btn btn-danger mt-3 ms-2" style="display: none;" onclick="closeDropdown();">Отмена</button>
                 </div>
         </div>
-    
-        <div id="subcategoryContainer"></div>
-        <button type="button" id="newCategoryBtn" onclick="addCategoryField()">Добавить категорию</button>
+
+        
+      
         `;
+        // <button type="button" id="newCategoryBtn" onclick="addCategoryField()">Добавить категорию</button>
 
         document.getElementById('contentDisplay').innerHTML = categoryDisplayHtml;
         clearCategoryField();
@@ -73,6 +76,15 @@ function addCategory(categoryName) {
         setUpEventHandlers();
     }
 }
+function updateDropdownSize() {
+    const dropdown = document.getElementById('subcategoryDropdown');
+    if (dropdown) {
+      dropdown.style.height = 'auto'; // Обновляем высоту на auto для адаптации к содержимому
+    }
+  }
+  
+  // Вызов функции после добавления элементов в dropdown
+  updateDropdownSize();
 function setUpEventHandlers() {
     // Обработчик для выпадающего списка
     const dropdown = document.querySelector('.add-subtask-container select.form-select');
@@ -92,16 +104,16 @@ function setUpEventHandlers() {
     const subcategoryDropdown = document.getElementById('subcategoryDropdown');
     if (subcategoryDropdown) {
         subcategoryDropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
+            event.stopPropagation();           
         });
     }
 
     // Обработчик клика за пределами выпадающего списка для его закрытия
-    document.addEventListener('click', function(event) {
-        if (!document.querySelector('.add-subtask-container').contains(event.target)) {
-            closeDropdown();
-        }
-    });
+    // document.addEventListener('click', function(event) {
+    //     if (!document.querySelector('.add-subtask-container').contains(event.target)) {
+    //         closeDropdown();
+    //     }
+    // });
 }
 function editCategory(element) {
     var categoryItem = element.closest('.category-name');
@@ -391,10 +403,24 @@ function toggleDropdown(event) {
     event.stopPropagation(); // Останавливаем всплытие события
     var dropdown = document.getElementById('subcategoryDropdown');
     var addSubtaskLabel = document.querySelector('.add-subtask-label');
-    
-    dropdown.style.display = 'block'; // Показываем выпадающий список
-    addSubtaskLabel.style.display = 'none'; // Скрываем надпись "Добавить подзадачу"
+
+    // Проверяем текущее состояние dropdown для переключения видимости
+    var isVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block'; // Переключаем видимость
+    addSubtaskLabel.style.display = isVisible ? 'block' : 'none'; // Переключаем надпись "Добавить подзадачу"
+
+    // Переключаем кнопки только когда dropdown активен
+    var saveButton = document.querySelector('.btn-seve');
+    var cancelButton = document.querySelector('.btn-danger');
+    if (saveButton && cancelButton) {
+        saveButton.style.display = isVisible ? 'none' : 'block';
+        cancelButton.style.display = isVisible ? 'none' : 'block';
+    }
 }
+
+
+
+
 
 function closeDropdown(event) {
     if (event) {
@@ -409,11 +435,6 @@ function closeDropdown(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded and parsed');
-    console.log(document.getElementById('subcategoryDropdown')); // Проверьте, что элемент существует
-    console.log(document.querySelector('.add-subtask-label'));
-    console.log(document.querySelector('.add-subtask-container'));
-
     var dropdown = document.getElementById('subcategoryDropdown');
     var addSubtaskLabel = document.querySelector('.add-subtask-label');
     var container = document.querySelector('.add-subtask-container');
