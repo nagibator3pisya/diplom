@@ -57,9 +57,9 @@ function addCategory(categoryName) {
                 </select>
                 </div>
                 <div id="formContainer"></div>
-                <div class="d-flex justify-content-start mt-2 ms-2 mb-2">
-                <button class="btn btn-seve mt-3 " style="display: none;">Сохранить</button>
-                <button class="btn btn-danger mt-3 ms-2" style="display: none;" onclick="closeDropdown();">Отмена</button>
+                <div class="bot d-flex justify-content-start  ms-2">
+                <button class="btn btn-seve" style="display: none;">Сохранить</button>
+                <button class="btn btn-danger ms-2" style="display: none;" onclick="closeDropdown();">Отмена</button>
                 </div>
         </div>
 
@@ -79,17 +79,17 @@ function addCategory(categoryName) {
 function updateDropdownSize() {
     const dropdown = document.getElementById('subcategoryDropdown');
     if (dropdown) {
-      dropdown.style.height = 'auto'; // Обновляем высоту на auto для адаптации к содержимому
+        dropdown.style.height = 'auto'; // Обновляем высоту на auto для адаптации к содержимому
     }
-  }
-  
-  // Вызов функции после добавления элементов в dropdown
-  updateDropdownSize();
+}
+
+// Вызов функции после добавления элементов в dropdown
+updateDropdownSize();
 function setUpEventHandlers() {
     // Обработчик для выпадающего списка
     const dropdown = document.querySelector('.add-subtask-container select.form-select');
     if (dropdown) {
-        dropdown.addEventListener('change', function() {
+        dropdown.addEventListener('change', function () {
             updateForm(this.value);
         });
     }
@@ -103,8 +103,8 @@ function setUpEventHandlers() {
     // Остановка всплытия событий в выпадающем списке
     const subcategoryDropdown = document.getElementById('subcategoryDropdown');
     if (subcategoryDropdown) {
-        subcategoryDropdown.addEventListener('click', function(event) {
-            event.stopPropagation();           
+        subcategoryDropdown.addEventListener('click', function (event) {
+            event.stopPropagation();
         });
     }
 
@@ -434,7 +434,7 @@ function closeDropdown(event) {
     addSubtaskLabel.style.display = 'inline'; // Показываем надпись "Добавить подзадачу"
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var dropdown = document.getElementById('subcategoryDropdown');
     var addSubtaskLabel = document.querySelector('.add-subtask-label');
     var container = document.querySelector('.add-subtask-container');
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Если контейнер не найден, останавливаем выполнение
     }
 
-    container.addEventListener('click', function(event) {
+    container.addEventListener('click', function (event) {
         if (event.target === addSubtaskLabel) {
             toggleDropdown(event);
         }
@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Если dropdown не найден, останавливаем выполнение
     }
 
-    dropdown.addEventListener('click', function(event) {
+    dropdown.addEventListener('click', function (event) {
         event.stopPropagation();
     });
 });
@@ -474,21 +474,80 @@ function updateForm(selectedOption) {
     switch (selectedOption) {
         case '1': // Один вариант ответа
             formHtml = `
-                <div>Один вариант ответа</div>
-                <input type="text" placeholder="Введите ваш ответ" />
+            <form class="text-form-several-options">
+            <div class="form-group">
+                <label for="titleInput" class='mb-2 zagolovok'>Заголовок</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="Насколько чисто у входа?">
+            </div>
+            
+            <div class="form-group">
+                <label for="subtitleInput" class='mb-2 podzagolovok '>Подзаголовок</label>
+                <input type="text" class="form-control" id="subtitleInput" placeholder="Оцените чистоту покрытия">
+            </div>
+            
+            <!-- Блоки для ответов -->
+            <div id="answers">
+                <!-- Динамически добавляемые ответы -->
+            </div>
+        
+            <button type="button" onclick="addAnswer()" class="add-subtask-label2"  >Добавить вариант ответа</button>
+        
+          
+        </form>
             `;
             break;
         case '2': // Несколько вариантов ответа
             formHtml = `
-                <div>Несколько вариантов ответа</div>
-                <input type="checkbox" /> Вариант 1<br />
-                <input type="checkbox" /> Вариант 2<br />
-            `;
+            <form class="text-form-several-options">
+            <div class="form-group">
+                <label for="titleInput" class='mb-2 zagolovok'>Заголовок</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="Насколько чисто у входа?">
+            </div>
+            
+            <div class="form-group">
+                <label for="subtitleInput" class='mb-2 podzagolovok '>Подзаголовок</label>
+                <input type="text" class="form-control" id="subtitleInput" placeholder="Оцените чистоту покрытия">
+            </div>
+            
+            <!-- Блоки для ответов -->
+            <div id="answers">
+                <!-- Динамически добавляемые ответы -->
+            </div>
+        
+            <button type="button" onclick="addAnswer()" class="add-subtask-label2"  >Добавить вариант ответа</button>
+        
+          
+        </form>
+        
+                `;
             break;
+        // <div class="invalid-feedback">
+        // <i class="bi bi-exclamation-circle-fill"></i> Максимальный балл 10!.
+        // </div>
         case '3': // Текстовое поле
             formHtml = `
-                <div>Текстовое поле</div>
-                <textarea placeholder="Введите текст"></textarea>
+                <form class="text-form">
+                    <div class="zagolovok">
+                        <label for="titleInput" >Заголовок</label>
+                        <input type="text" class="form-control" id="titleInput">
+                    </div>
+                    
+                    <div class="podzagolovok">
+                        <label for="subtitleInput" >Подзаголовок</label>
+                        <input type="text" class="form-control" id="subtitleInput">
+                    </div>
+            
+                    <div class="counter">
+                        <button class="btn-decrease"><i class="bi bi-dash-circle"></i></button>
+                        <span id="value">1</span>
+                        <button class="btn-increase"><i class="bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class="invalid-feedback">
+                    <i class="bi bi-exclamation-circle-fill"></i> Максимальный балл 10!.
+                </div>
+                
+                
+                </form>
             `;
             break;
         case '4': // Фото
@@ -509,13 +568,15 @@ function updateForm(selectedOption) {
                 <input type="file" />
             `;
             break;
-        default:
-            formHtml = '<div>Выберите опцию</div>';
+
+
     }
 
     const formContainer = document.getElementById('formContainer');
+
     if (formContainer) {
         formContainer.innerHTML = formHtml;
+        attachCounterEvents(); // Переназначить события после обновления HTML
     } else {
         console.error('Form container not found');
     }
@@ -527,6 +588,110 @@ function closeDropdown() {
         dropdown.style.display = 'none';
     }
 }
+// счетчик на текст поле
+// JavaScript: Функция для счетчика с проверкой максимального значения и отображением ошибки
+function attachCounterEvents() {
+    var decreaseButton = document.querySelector('.btn-decrease');
+    var increaseButton = document.querySelector('.btn-increase');
+    var valueElement = document.getElementById('value');
+    var errorAlert = document.querySelector('.invalid-feedback');
+
+    if (decreaseButton && increaseButton && valueElement) {
+        decreaseButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            var currentValue = parseInt(valueElement.textContent, 10);
+            if (currentValue > 0) {
+                valueElement.textContent = currentValue - 1;
+            }
+            // Скрываем ошибку, если значение меньше 11
+            if (currentValue <= 10) {
+                errorAlert.classList.remove('visible');
+            }
+        });
+
+        increaseButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            var currentValue = parseInt(valueElement.textContent, 10);
+            if (currentValue < 10) {
+                valueElement.textContent = currentValue + 1;
+                errorAlert.classList.remove('visible'); // Убедимся, что ошибка скрыта при увеличении
+            } else {
+                // Показываем ошибку, если значение достигло 10
+                errorAlert.classList.add('visible');
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    attachCounterEvents();
+});
+
+// добавление в нескольних вариантов
+
+let answerCount = 0;
+function addAnswer() {
+    const answersContainer = document.getElementById('answers');
+    if (!answersContainer) {
+        console.error("Container for answers not found!");
+        return; // Прекращаем выполнение функции, если контейнер не найден
+    }
+    const newAnswerHTML = `
+    <div class="answer-item d-flex justify-content-between mb-3">
+        <div class="flex-grow-1 me-3">
+            <label class='mb-2'>Ответ #${answerCount + 1}</label>
+            <input type="text" class="form-control" placeholder="Введите ответ">
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <label>Баллы</label>
+            <div class="d-flex align-items-center mt-0">
+                <div class="counter-container">
+                    <button class="btn btn-decrease" type="button"><i class="bi bi-dash-circle"></i></button>
+                    <span class="value">1</span>
+                    <button class="btn btn-increase" type="button"><i class="bi bi-plus-circle"></i></button>
+                    
+                </div>
+                <button class="btn btn-outline-secondary btn-delete" type="button"><i class="bi bi-trash"></i></button>
+            </div>
+        </div>
+    </div>`;
+    answersContainer.insertAdjacentHTML('beforeend', newAnswerHTML);
+    answerCount++; // Увеличиваем счётчик после добавления ответа
+    // После добавления ответа вызываем установку обработчиков событий
+    setupEventListeners();
+}
+
+function setupEventListeners() {
+    const answersContainer = document.getElementById('answers');
+    answersContainer.addEventListener('click', handleButtonClick);
+}
+
+
+function handleButtonClick(event) {
+    const btnDecrease = event.target.closest('.btn-decrease');
+    const btnIncrease = event.target.closest('.btn-increase');
+
+    if (btnDecrease || btnIncrease) {
+        const valueSpan = btnDecrease ? btnDecrease.nextElementSibling : btnIncrease.previousElementSibling;
+        let value = parseInt(valueSpan.textContent, 10);
+
+        if (btnDecrease && value > 0) {
+            valueSpan.textContent = value - 1;
+        } else if (btnIncrease && value < 10) {
+            valueSpan.textContent = value + 1;
+        }
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOMContentLoaded event fired");
+    addAnswer(); // Добавляем первый ответ сразу после загрузки страницы
+});
+
+
+
+
 
 
 // 

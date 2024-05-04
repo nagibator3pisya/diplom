@@ -1,4 +1,3 @@
-
 .form-select .selected {
   color: rgb(200, 200, 200);
 }
@@ -123,14 +122,13 @@ textarea {
   width: 100%;
   height: 500px;
   border: 2px solid #fefefe;
-
 }
 
 /* кнопки для сохранения и предосмотра */
 
 .btn-cancel,
 .btn-otmena-tab1,
-.btn-otmena-tab2  {
+.btn-otmena-tab2 {
   background-color: rgb(255, 250, 250);
   color: rgb(0, 0, 0);
   border: 1px solid rgba(90, 89, 89, 0.255);
@@ -160,7 +158,7 @@ textarea {
 }
 .btn-seve:active,
 .btn-sybmit-tab1:active,
-.btn-sybmit-tab2:active  {
+.btn-sybmit-tab2:active {
   background-color: rgb(14, 113, 90) !important;
   color: rgba(255, 255, 255, 1) !important;
 }
@@ -173,31 +171,30 @@ textarea {
 }
 /*  */
 
-.btn-category{
+.btn-category {
   font-size: 20px;
   color: rgba(154, 156, 156, 1);
 }
 .btn-category:active {
- 
-  color: rgba(154, 156, 156, 1)!important;
+  color: rgba(154, 156, 156, 1) !important;
 }
 .btn-category:hover {
-  color: rgba(154, 156, 156, 1)
+  color: rgba(154, 156, 156, 1);
 }
 
 /* данные в js */
 .form-cont {
   border-radius: 5px;
 }
-.btn-cancellation,  .btn-save{
+.btn-cancellation,
+.btn-save {
   padding: 8px 10px; /* Пример значений, корректируйте по своему вкусу */
   font-size: 15px; /* Пример значения, корректируйте по своему вкусу */
 }
 
-
-
+.btn-danger,
 .btn-cancellation,
-.btn-otmena-js{
+.btn-otmena-js {
   background-color: rgb(255, 255, 255);
 
   color: rgb(0, 0, 0);
@@ -207,12 +204,14 @@ textarea {
   /* padding: 5px; */
   border-radius: 5px;
 }
+.btn-danger:hover,
 .btn-cancellation:hover,
 .btn-otmena-js:hover {
   background-color: rgba(244, 67, 54, 1);
   border-color: rgba(244, 67, 54, 1);
   color: rgba(255, 255, 255, 1);
 }
+.btn-danger:active,
 .btn-cancellation:active,
 .btn-otmena-js:active {
   background-color: rgba(244, 67, 54, 1) !important;
@@ -228,7 +227,6 @@ textarea {
   /* padding: 5px; */
 
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация за 0.3 секунды */
-
 }
 .btn-save:active,
 .btn-dobavit-js:active {
@@ -245,37 +243,42 @@ textarea {
 .add-subtask-container {
   border: 2px dashed #ccc;
   width: 100%;
-  min-height: 118px;  /* Используйте min-height вместо height для гарантии минимального размера */
+  min-height: 118px; /* Используйте min-height вместо height для гарантии минимального размера */
   position: relative; /* Здесь можно сохранить relative для позиционирования дочерних элементов, если это необходимо */
   border-radius: 15px;
   margin-top: 10px;
   overflow: hidden; /* Если вы хотите скрыть выходящее содержимое */
 }
-
+.form-select {
+  width: 50%;
+}
 
 .add-subtask-label {
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%); /* Центрирование надписи */
   cursor: pointer;
-  color:rgba(154, 156, 156, 1);
+  color: rgba(154, 156, 156, 1);
   font-size: 20px;
 }
 
 #subcategoryDropdown {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
   right: 0;
   padding: 10px;
   box-sizing: border-box;
 }
 
-
+.bot {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
 
 .bi-trash-fill,
-.bi-pencil-fill{
+.bi-pencil-fill {
   font-size: 15px;
   margin-left: 10px;
   color: #919191;
@@ -283,9 +286,8 @@ textarea {
 }
 
 .bi-trash-fill:hover,
-.bi-pencil-fill:hover{
- color: #201f1f;
- 
+.bi-pencil-fill:hover {
+  color: #201f1f;
 }
 .btn-delet {
   background-color: rgba(215, 40, 40, 0.392);
@@ -324,13 +326,122 @@ textarea {
   color: rgba(255, 255, 255, 1);
 }
 
+/* форма */
+#formContainer {
+  padding: 10px;
+  margin-top: 50px;
+}
+.text-form {
+  margin: 50px;
+}
+
+.zagolovok,
+.podzagolovok {
+  font-weight: bolder;
+}
+
+.form-control {
+  border: 1px solid #838282 !important;
+}
+
+.btn-decrease,
+.btn-increase {
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  color: #969696;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter {
+  display: flex; /* Используем flexbox для равномерного распределения элементов */
+  justify-content: center; /* Центрируем элементы внутри блока */
+  border-radius: 5px;
+  padding: 5px; /* Отступы внутри контейнера */
+  max-width: 100px; /* Задаем максимальную ширину контейнера */
+  margin-top: 20px;
+  border: 1px solid #838282 !important;
+}
+#value {
+  margin: 0 10px;
+}
+/* ошибки */
+.invalid-feedback {
+  color: red;
+  display: none; /* По умолчанию скрыто */
+}
+
+.visible {
+  display: block; /* Показываем элемент, когда нужно */
+}
+.bi-exclamation-circle-fill {
+  color: red;
+}
+/* .ошибки */
+/* добавление нескольких варианто */
+.form-group {
+  margin-bottom: 20px;
+}
+
+#answers .d-flex {
+  gap: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.add-subtask-label2 {
+  border: 2px dashed #ccc;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgba(154, 156, 156, 1);
+  font-size: 20px;
+}
+
+.answer-item {
+  display: flex;
+  align-items: center; /* Выравнивает все элементы по центру вертикально */
+  justify-content: space-between;
 
 
+}
+
+.answer-item .flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: end; /* Выравнивает дочерние элементы по правому краю */
+  margin-bottom: 3px;
+}
+
+.answer-item .counter {
+  display: flex;
+  align-items: center;
+}
+
+.btn-delete {
+  margin-left: 10px; /* Отступ между кнопкой увеличения и удаления */
+}
+
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  padding: 5px; /* Отступы внутри контейнера */
+  gap: 5px; /* Расстояние между элементами внутри контейнера */
+  border: 2px solid #ccc; /* Обводка */
+  border-radius: 5px; /* Скругленные углы */
+}
 
 
 /* мобильная */
 @media (max-width: 768px) {
-  textarea{
+  textarea {
     height: 400px;
   }
 }

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/project/css/chablon_s_zapolneniem.css">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="https://cdn.tiny.cloud/1/zzcdprvg7i8mb3jgcsmj9e01k9r3wkuj901njworndjk0gak/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
+    <title>Шаблоны для задач</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <!-- Боковая панель -->
+            <nav class=" nav navbar-expand-lg col-xxl-2 col-md-2  d-none d-xl-block sticky-top p-0" id="desktopSidebar">
+                <!-- Содержимое боковой панели -->
+                <div class="position-sticky">
+                    <div class="sidebar-logo">
+                        <a href="#">Проверка.ru</a>
+
+                    </div>
+
+                    <ul class="nav flex-column sidebar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="lni lni-dashboard"></i>
+                                <span>Проверки</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="lni lni-cloud-check"></i>
+                                <span class="text-wrap">Шаблонные задачи</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-users"></i>
+                                <span>Проверяющие</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-archive"></i>
+                                <span>Сотрудники</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-stats-up"></i>
+                                <span>Статистика</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-question-circle"></i>
+                                <span>Обратная связь</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <hr class="hr" />
+                    <ul class="nav flex-column sidebar-nav">
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-user"></i>
+                            <span>Профиль</span>
+                        </a>
+
+
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-close"></i>
+                            <span>Выход</span>
+                        </a>
+                    </ul>
+
+                </div>
+
+            </nav>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar"
+                aria-labelledby="mobileSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="mobileSidebarLabel">Проверка.ru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <!-- Содержимое боковой панели -->
+                    <div class="sidebar-logo">
+                        <a href="#">Проверка.ru</a>
+                    </div>
+
+                    <ul class="nav flex-column sidebar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="lni lni-dashboard"></i>
+                                <span>Проверки</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="lni lni-cloud-check"></i>
+                                <span>Шаблонные задачи</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-users"></i>
+                                <span>Проверяющие</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-archive"></i>
+                                <span>Сотрудники</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-stats-up"></i>
+                                <span>Статистика</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a href="#" class="nav-link active">
+                                <i class="lni lni-question-circle"></i>
+                                <span>Обратная связь</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <hr class="hr" />
+                    <ul class="nav flex-column sidebar-nav">
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-user"></i>
+                            <span>Профиль</span>
+                        </a>
+                        <a href="#" class="nav-link active">
+                            <i class="lni lni-close"></i>
+                            <span>Выход</span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <main class="col-xxl-10 col-xl-10  p-0">
+                <nav class="navbar navbar-light bg-light sticky-top ">
+                    <div class="container-fluid ">
+                        <nav class="navbar  p-0">
+                            <a class="navbar-brand " href="#">
+                                <i class="bi bi-arrow-left" style="color: rgba(132, 132, 132, 0.6);"></i>
+                            </a>
+                            <span>Шаблоны для задач</span>
+
+                        </nav>
+                        <!-- Кнопка для показа/скрытия боковой панели на мобильных устройствах -->
+                        <button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                    </div>
+                </nav>
+                <div class="container-fluid py-3 ">
+                    <div class="container ">
+                        <div class="row">
+                            <form>
+                                <div class="tab">
+                                    <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+                                    <label for="tab-btn-1">Инструкция</label>
+
+                                    <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+                                    <label for="tab-btn-2">Подзадачи</label>
+                                    <hr>
+                                    <div class="tab-content" id="content-1">
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                                <textarea id="premiumskinsandicons-outside">
+
+                                                </textarea>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <!-- TODO
+                                                    Возможно заменить на a с href
+                                                 -->
+                                                <button type="button" class="btn btn-light-tab1">Предосмотр</button>
+                                                <button type="button" class="btn btn-otmena-tab1 ">Отмена</button>
+                                                <button type="button" class="btn btn-sybmit-tab1">Сохранить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content" id="content-2">
+                                        <div class="row">
+
+                                            <div class="col-md-7 col-lg-6 col-sm-6">
+                                                <button type="button" id="addCategoryBtn" class="btn btn-category"
+                                                    onclick="addCategoryField()">Добавить категорию
+
+
+
+                                                </button>
+
+                                                <div id="categoryFieldContainer">
+                                                    <!-- Здесь появится поле ввода -->
+                                                </div>
+
+                                               
+                                                   
+                                         
+                                                <div id="contentDisplay">
+                                                    <!-- <div class="row">
+                                                        
+                                                    </div> -->
+                                                </div>
+                                                
+
+                                            </div>
+                                            <div class="col-xxl-6 ">
+
+                                                <!-- TODO
+                                                    Возможно заменить на a с href
+                                                 -->
+                                                <button type="button" class="btn btn-light-tab2">Предосмотр</button>
+                                                <button type="button" class="btn btn-otmena-tab2 ">Отмена</button>
+                                                <button type="button" class="btn btn-sybmit-tab2">Сохранить</button>
+
+
+                                            </div>
+                                        </div>
+                                        <!-- модульное окно когда мы удаляем категорию -->
+
+                                        <div class="modal fade" id="deleteConfirmationModal" tabindex="-1"
+                                            aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteModalLabel">Подтверждение
+                                                            удаления</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Вы уверены, что хотите удалить этот объект?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn-otmena"
+                                                            data-bs-dismiss="modal">Отмена</button>
+                                                        <button type="button" class="btn-delet"
+                                                            id="deleteConfirmButton">Удалить</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/zzcdprvg7i8mb3jgcsmj9e01k9r3wkuj901njworndjk0gak/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/project/js/m.js"></script>
+
+    <!-- Для мобильной версии -->
+</body>
+
+</html>
+
+<!-- 
+var inputHtml = `
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Название категории" aria-label="Название категории"
+        aria-describedby="button-addon2">
+    <button class="btn btn-sybmit" type="button" id="button-addon2" onclick="saveCategory()">Добавить</button>
+    <button class="btn btn-otmena" type="button" onclick="cancelCategory()">Отмена</button>
+</div>
+`; -->

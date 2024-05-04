@@ -1,0 +1,9 @@
+.add-subtask-container {
+    border: 2px dashed #ccc;
+    width: 100%;
+    min-height: 118px;  /* Используйте min-height вместо height для гарантии минимального размера */
+    position: relative; /* Здесь можно сохранить relative для позиционирования дочерних элементов, если это необходимо */
+    border-radius: 15px;
+    margin-top: 10px;
+    overflow: hidden; /* Если вы хотите скрыть выходящее содержимое */
+  }
